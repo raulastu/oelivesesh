@@ -1,13 +1,6 @@
 <?php
-function getMySQLi(){
-	$mysqli = new mysqli("localhost", "root", "root", "oelivesesh");
-	if (mysqli_connect_errno()) {
-	    printf("Connect failed: %s\n", mysqli_connect_error());
-	    exit();
-	}
-	return $mysqli;
-}
 function DAOScheduler_insertSchedule($weekNumber, $dayNumber, $hourNumber, $who){
+	include_once'DBUtils.php';
 	$mysqli = getMySQLi();
 	$query = "SELECT username from schedules WHERE week_number=$weekNumber AND day_number=$dayNumber AND hour_number=$hourNumber";
 	$result = $mysqli->query($query);
@@ -35,6 +28,7 @@ function DAOScheduler_insertSchedule($weekNumber, $dayNumber, $hourNumber, $who)
 
 
 function DAOScheduler_getSchedules($weekNumber){
+	include_once'DBUtils.php';
 	$mysqli = getMySQLi();
 
 	$query = "SELECT day_number, hour_number, username FROM schedules WHERE week_number = ".$weekNumber;

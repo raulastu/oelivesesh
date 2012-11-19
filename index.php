@@ -70,7 +70,7 @@ if(!isset($_SESSION['user'])){
               <button class='btn btn-small' ng-model="schedules"
                 ng-bind-template="<?php echo "{{schedules['_".$j."_".$i."']}}";?>"
                 ng-click = "setSchedule(<?php echo "'_".$j."_".$i."'";?>)">
-                  claim
+                  
               </button>
             </td>
 <?PHP

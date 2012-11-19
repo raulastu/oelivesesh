@@ -1,13 +1,6 @@
 <?php
-function getMySQLi(){
-	$mysqli = new mysqli("localhost", "root", "root", "oelivesesh");
-	if (mysqli_connect_errno()) {
-	    printf("Connect failed: %s\n", mysqli_connect_error());
-	    exit();
-	}
-	return $mysqli;
-}
 function DAOLogin_login($user, $password){
+	include_once'DBUtils.php';
 	$mysqli = getMySQLi();
 
 	$query = "SELECT username FROM users WHERE username = ? AND password = ?";
