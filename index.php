@@ -30,7 +30,7 @@ if(!isset($_SESSION['user'])){
           <a class="brand" href="#">OE Live Session Scheduler</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="logout.php">Logout</a></li>
+              <li ><a href="logout.php">Logout</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
